@@ -1,0 +1,40 @@
+<app-loading [loading]="loading"></app-loading>
+<section class="all-section">
+  <div class="film-data">
+    <div style="padding: 0px 20px;display: flex;justify-content: space-between;">
+      <div style="display: flex; align-items: center">
+        <button [disabled]="idFilm-1-1 < 0" mat-mini-fab class="btn-change-film" (click)="moveFilm(-1)">
+          <i class="material-icons">arrow_back</i>
+        </button>
+        <span>previous</span>
+      </div>
+      <div style="display: flex; align-items: center">
+        <span>next</span>
+        <button [disabled]="idFilm-1+1 > films.length-1" mat-mini-fab class="btn-change-film" (click)="moveFilm(1)">
+          <i class="material-icons">arrow_forward</i>
+        </button>
+      </div>
+    </div>
+    <app-film-card [film]="film"></app-film-card>
+  </div>
+  <section style="flex: 1; max-width: 100vw;">
+    <mat-card class="header-card">
+      <div [routerLink]="['/home']" class="goback pointer">
+        <i class="material-icons">arrow_back</i>
+        <span style="padding-left: 10px">Go home</span>
+        <span style="font-size: 18px;font-weight: 700;margin-left: 25px">Characters</span>
+      </div>
+      <mat-form-field style="width: 100%">
+        <input (input)="searchVal=$event.target.value" matInput autoComplete="off"
+          placeholder="Name, gender, eyes color..." type="text">
+        <i matSuffix class="material-icons">search</i>
+      </mat-form-field>
+    </mat-card>
+    <div class="content-card">
+      <app-character-card *ngFor="let character of charactersPage" [character]="character"
+        (onSeeMore)="seeMore($event)"> 
+      </app-character-card>
+      <app-pagination (onPaginate)="charactersPage = $event" [data]="characters | search:searchVal:properties"></app-pagination>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,20 @@
+<section style="height: 100%;">
+  <mat-icon class="btn-close" (click)="onNoClick()">close</mat-icon>
+  <div mat-dialog-title>
+    <span>{{docView?.title}}</span>
+  </div>
+  <div mat-dialog-content class="all-center" style="height: 100%; overflow: inherit;">
+    <section *ngIf="!docView" style="height: 300px">
+      <mat-spinner style="margin: 20px" [strokeWidth]="3"></mat-spinner>
+    </section>
+    <div [hidden]="!docView" style="width: 200px;height: 300px;">
+      <img id="img-attached-preview" src="" style="max-height: 100%;max-width:100%;border: none;">
+    </div>
+  </div>
+  <button *ngIf="docIndex != 0" mat-mini-fab (click)="prevDoc()" class="btn-left">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <button *ngIf="docIndex != docs.length-1" mat-mini-fab (click)="nextDoc()" class="btn-right">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</section>

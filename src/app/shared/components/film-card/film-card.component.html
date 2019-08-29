@@ -1,0 +1,24 @@
+<div class="movie-card">
+	<div (click)="descriptionModal()" [ngStyle]="{'background-image': 'url(' + film?.imgUrl + ')'}" class="movie-header episode">
+		<div class="header-icon-container">
+		</div>
+	</div>
+	<div class="movie-content">
+		<div (click)="descriptionModal()" class="movie-content-header">
+			<div style="cursor: pointer;">
+				<h3 class="movie-title">{{film?.title}}</h3>
+				<h4 class="movie-subtitle">Episode {{film?.episode_id}}</h4>
+			</div>
+		</div>
+		<div class="movie-info">
+			<div class="info-section">
+				<label>Director</label>
+				<span>{{film?.director}}</span>
+			</div>
+			<div class="info-section">
+				<label>Personajes</label>
+				<span style="cursor: pointer; color: blue;" [routerLink]="['/character/'+film?.episode_id]">ver</span>
+			</div>
+		</div>
+	</div>
+</div>

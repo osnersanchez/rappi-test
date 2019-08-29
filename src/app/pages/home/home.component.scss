@@ -1,0 +1,38 @@
+app-film-card{
+    /* margin: 2em; */
+    text-align: center;
+}
+@media (max-width: 560px){
+    app-film-card{
+        width: 100%;        
+    }
+}
+
+@media (min-width: 561px) and (max-width: 900px){
+    app-film-card{
+        width: 50%;        
+    }
+}
+
+@media (min-width: 901px){
+    app-film-card{
+        width: 33%;        
+    }
+}
+
+  
+#icon {
+    width:30%;
+    margin-bottom: 12px;
+  }
+  .card{
+    padding: 0px;
+}
+.example-card {
+    min-width: 20vw;
+    min-height: 20vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

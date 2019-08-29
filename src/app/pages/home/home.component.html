@@ -1,0 +1,9 @@
+<app-loading [loading]="loading"></app-loading>
+<section style="padding: 1rem">
+    <mat-card style="margin: 1rem; text-align: center">
+        <h1>Episode list</h1>
+    </mat-card>
+    <div style="display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; max-width: 100%;">
+        <app-film-card *ngFor="let film of films" [film]="film"></app-film-card>
+    </div>
+</section>

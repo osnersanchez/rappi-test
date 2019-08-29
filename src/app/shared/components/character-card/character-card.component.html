@@ -1,0 +1,29 @@
+<div class="movie-card">
+	<h3 class="movie-title">{{character?.name}}</h3>
+	<div class="info-card">
+		<div class="info-section">
+			<i class="material-icons">people</i>
+			<div class="left-gap">
+				<label>Gender</label>
+				<span>{{character?.gender}}</span>
+			</div>
+		</div>
+		<div class="info-section">
+			<i class="material-icons">remove_red_eye</i>
+			<div class="left-gap">
+				<label>Eyes color</label>
+				<span>{{character?.eye_color}}</span>
+			</div>
+		</div>
+		<div class="info-section">
+			<i class="material-icons">local_movies</i>
+			<div class="left-gap more">
+				<label>Films</label>
+				<div (click)="seeFilms()" style="display: flex; align-items: center">
+					<span>see more...</span>
+					<i class="material-icons">arrow_forward</i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<section class="pagination-custom text-center">
+  <div class="pagination-btn">
+    <div class="pag-link" [ngClass]="paginateDate.currentPage === 1 ? 'disabled' : 'enabled'">
+      <a class="direction" (click)="moveTo(1)">
+        <mat-icon>first_page</mat-icon>
+      </a>
+    </div>
+    <div style="margin-left: 15px" class="pag-link" [ngClass]="paginateDate.currentPage === 1 ? 'disabled' : 'enabled'">
+      <a class="direction" (click)="back()">
+        <mat-icon>chevron_left</mat-icon>
+      </a>
+    </div>
+  </div>
+  <div class="pag-link step" [class.current]="paginateDate.currentPage === page"
+    *ngFor="let page of [paginateDate.currentPage-1,paginateDate.currentPage,paginateDate.currentPage+1]"
+    (click)="moveTo(page)" [style.visibility]="page > paginateDate.numberPages || page < 1?'hidden':'inherit'">
+    <a [ngClass]="paginateDate.currentPage === page ? 'current' : 'standar'">{{page}}</a>
+  </div>
+  <div class="pagination-btn">
+    <div class="pag-link" [ngClass]="paginateDate.currentPage === paginateDate.numberPages ? 'disabled' : 'enabled'">
+      <a class="direction" (click)="next()">
+        <mat-icon>chevron_right</mat-icon>
+      </a>
+    </div>
+    <div style="margin-left: 15px" class="pag-link" [ngClass]="paginateDate.currentPage === paginateDate.numberPages ? 'disabled' : 'enabled'">
+      <a class="direction" (click)="moveTo(paginateDate.numberPages)">
+        <mat-icon>last_page</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+$pagerColor: black;
+
+.pagination-custom {
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+  padding: 15px 0px;
+}
+
+.pagination-btn {
+  display: flex;
+}
+
+.pag-link {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.pag-link > a {
+  font-size: 16px;
+  line-height: 1.42857;
+  margin-right: 5px;
+  padding: 10px 14px;
+  position: relative;
+  text-decoration: none;
+  border: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.pag-link > a.direction {
+  display: flex;
+  align-items: center;
+}
+
+.pag-link > a.direction {
+  height: 38px;
+  width: 38px;
+  padding: 0px;
+  justify-content: center;
+}
+
+.pag-link.current {
+  background: #f6f6f6;
+  border-radius: 4px;
+}
+
+.pag-link > a {
+  cursor: pointer;
+}
+.pag-link.disabled * {
+  background: #fdfdfd;
+  cursor: default;
+}
+.pag-link.enabled {
+  background: #f6f6f6;
+  display: flex;
+  align-items: center;
+}
+
+.pag-link.disabled > a > .mat-icon {
+  color: #19a3b259 !important;
+}
+.pag-link > a > .mat-icon {
+  color: $pagerColor;
+}
+
+.pag-link > a.current,
+.pag-link > a.standar {
+  border-radius: 50%;
+  color: #fff;
+}
+
+.pag-link > a.current {
+  background-color: $pagerColor;
+}
+
+.pag-link > a.standar {
+  background-color: #00000036;
+  padding: 8px 12px !important;
+}
+
+.step {
+  height: 38px;
+  width: 110px;
+  margin: 5px;
+  background: #fdfdfd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
